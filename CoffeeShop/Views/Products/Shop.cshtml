@@ -1,0 +1,21 @@
+@model IEnumerable<CoffeeShop.Models.Product>
+
+<h1>☕ Coffee Shop Menu</h1>
+
+<div style="display:flex;flex-wrap:wrap;gap:20px">
+
+@foreach(var item in Model)
+{
+    <div style="border:1px solid gray;padding:15px;width:250px">
+        <img src="@item.ImageUrl" width="200" height="150" />
+        <h3>@item.Name</h3>
+        <p>@item.Detail</p>
+        <h4>@item.Price VNĐ</h4>
+
+        <a asp-action="Detail" asp-route-id="@item.Id">
+            Xem chi tiết
+        </a>
+    </div>
+}
+
+</div>
